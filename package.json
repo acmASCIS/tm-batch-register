@@ -1,0 +1,26 @@
+{
+  "name": "tm-batch-register",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "start:dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acmASCIS/tm-batch-register.git"
+  },
+  "author": "Tassneem Hamdy <tassneemhamdy@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/acmASCIS/tm-batch-register/issues"
+  },
+  "homepage": "https://github.com/acmASCIS/tm-batch-register#readme",
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.7"
+  }
+}
