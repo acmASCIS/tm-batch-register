@@ -17,20 +17,19 @@ app.use(express.static('public'));
 app.use(express.json());
 
 app.post('/register', async (req, res) => {
-  try {
-    const promises = req.body.map((element) => axios.post(API_URL, {
-      ...element,
-      handle: element.codeforcesHandle,
-      password: '123456',
-      confirmPassword: '123456',
-      role: 0,
-    }));
-    await Promise.all(promises);
-    res.status(200).json({ error: false });
-  } catch (error) {
-    res.status(500).json({ error: true });
-    console.log(error);
-  }
+  const promises = req.body.map((element) => axios.post(API_URL, {
+    ...element,
+    handle: element.codeforcesHandle,
+    password: '123456',
+    confirmPassword: '123456',
+    role: 0,
+  }));
+  const results = (await Promise.allSettled(promises)).map((element, idx) => ({
+    ...element,
+    trainee: req.body[idx],
+  }));
+  console.log(results);
+  res.status(200).json({ error: false });
 });
 
 app.listen(port, () => {
