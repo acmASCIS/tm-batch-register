@@ -1,5 +1,4 @@
 async function handleSubmit() {
-  const mentorHandle = document.getElementById('mentorHandleInput').value;
   const traineeData = document.getElementById('traineesDataInput').value;
   const trainees = traineeData.split('\n').map((x) => {
     const [name, email, codeforcesHandle] = x.split('\t');

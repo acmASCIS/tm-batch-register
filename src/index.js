@@ -6,9 +6,10 @@ require('dotenv').config();
 const app = express();
 const API_URL = process.env.API_URL || 'https://trainees-monitor-dev.herokuapp.com/register';
 const port = process.env.PORT || 3000;
+const origin = process.env.ORIGIN;
 
 app.use(cors({
-  origin: process.env.ORIGIN,
+  origin,
 }));
 
 app.use(express.static('public'));
