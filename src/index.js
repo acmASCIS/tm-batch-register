@@ -16,9 +16,6 @@ app.use(auth({
   challenge: true,
 }));
 
-console.log(username);
-console.log(password);
-
 app.use(cors({
   origin,
 }));
